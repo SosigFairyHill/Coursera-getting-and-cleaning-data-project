@@ -20,7 +20,7 @@ run_analysis <- function() {
   names(allData) <- append("Subject",names(allData)[2:81])
   means <- aggregate(allData[,3:length(allData)],by=list(allData$Subject,allData$Activity),FUN=mean)
   names(means)[1:2] <- c("Subject","Activity")
-  write.table(means, "./tidyMeans.txt", sep="\t")
+  write.table(means, "./tidyUCIHARData.txt", sep="\t")
   return(list("dataset"=allData,"tidy"=means))
 }
   
